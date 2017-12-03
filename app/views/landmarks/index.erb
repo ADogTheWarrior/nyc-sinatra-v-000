@@ -1,0 +1,7 @@
+<h1> Landmark Index </h1>
+
+<%@landmarks.each do |landmark|%>
+  <a href='/landmarks/<%=landmark.id%>'> <%=landmark.name%> </a><br>
+  <a href='/figures/<%=landmark.figure.id%>'> <%=landmark.figure.name%> </a><br>
+  Year Completed: <%=landmark.year_completed%> <br></br>
+<%end%>
