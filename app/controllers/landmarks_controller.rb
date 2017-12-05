@@ -7,9 +7,10 @@ class LandmarksController < ApplicationController
   get '/landmarks/new' do
     erb :'/landmarks/new'
   end
-
+name
+year_completed
   post '/landmarks' do
-  puts "params= #{params}"
+    puts "params= #{params}"
     landmark = Landmark.create(params)
     puts "landmark= #{landmark}"
   end
