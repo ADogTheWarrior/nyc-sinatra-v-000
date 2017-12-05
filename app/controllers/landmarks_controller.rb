@@ -24,6 +24,7 @@ class LandmarksController < ApplicationController
   end
 
   post 'landmarks/:id' do
+    puts "params= #{params}"
 
     redirct_string = '/landmarks/' + @landmark.id.to_s
     redirect to redirct_string
