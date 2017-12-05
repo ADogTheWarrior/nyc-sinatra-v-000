@@ -24,9 +24,17 @@ class LandmarksController < ApplicationController
   end
 
   post 'landmarks/:id' do
-    puts "params= #{params}"
+    landmark = Landmark.find(params[:id])
 
-    redirct_string = '/landmarks/' + @landmark.id.to_s
+    if params[:name] != ""
+      figure.update(name: params[:name])
+    end
+
+    if params[:year_completed] != ""
+      figure.update(name: params[:year_completed])
+    end
+
+    redirct_string = '/landmarks/' + landmark.id.to_s
     redirect to redirct_string
   end
 end
