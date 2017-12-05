@@ -31,7 +31,7 @@ class LandmarksController < ApplicationController
     end
 
     if params[:year_completed] != ""
-      figure.update(name: params[:year_completed])
+      figure.update(year_completed: params[:year_completed])
     end
 
     redirct_string = '/landmarks/' + @landmark.id.to_s
