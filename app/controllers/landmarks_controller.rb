@@ -24,7 +24,6 @@ class LandmarksController < ApplicationController
   end
 
   patch '/landmarks/:id' do
-puts "params= #{params}"
     landmark = Landmark.find(params[:id])
 
     if params[:name] != ""
