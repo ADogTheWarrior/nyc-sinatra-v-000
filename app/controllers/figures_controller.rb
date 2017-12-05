@@ -99,6 +99,6 @@ class FiguresController < ApplicationController
       landmark.save
     end
 
-    redirect to 'figures/"#{@figure.id}"'
+    redirect to '/figures/:id'
   end
 end
