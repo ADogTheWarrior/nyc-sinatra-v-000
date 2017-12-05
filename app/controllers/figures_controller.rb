@@ -59,7 +59,47 @@ class FiguresController < ApplicationController
   end
 
   post '/figures/:id' do
+    figure = Figure.find(params[:id])
 
-    redirect to 'figures/index'
+    if params[:figure_name] != ""
+      figure.update(name: params[:figure_name])
+    end
+
+    if params.key?("figure")
+      if params[:figure].key?("title_ids")
+        params[:figure][:title_ids].each do |id|
+          title = Title.find(id)
+          figure.titles << title
+          figure.save
+          title.save
+        end
+      end
+
+      if params[:figure].key?("landmark_ids")
+        params[:figure][:landmark_ids].each do |id|
+          landmark = Landmark.find(id)
+          figure.landmarks << landmark
+          figure.save
+          landmark.save
+        end
+      end
+    end
+
+    if !params[:new_title].empty?
+      title = Title.create(name: params[:new_title])
+      figure.titles << title
+      figure.save
+      title.save
+    end
+
+    if !params[:new_landmark].empty?
+      landmark = Landmark.create(name: params[:new_landmark])
+      figure.landmarks << landmark
+      figure.save
+      landmark.save
+    end
+
+    redirct_string = '/figures/' + @figure.id.to_s
+    redirect to redirct_string
   end
 end
