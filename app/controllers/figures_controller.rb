@@ -59,7 +59,6 @@ class FiguresController < ApplicationController
   end
 
   post '/figures/:id' do
-puts "params= #{params}"
     figure = Figure.find(params[:id])
 
     if params[:figure_name] != ""
