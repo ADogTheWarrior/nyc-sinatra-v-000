@@ -62,6 +62,10 @@ class FiguresController < ApplicationController
 puts "params= #{params}"
     figure = Figure.find(params[:id])
 
+    if params[:figure_name] != ""
+      figure.update(name: params[:figure_name])
+    end
+
     if params.key?("figure")
       if params[:figure].key?("title_ids")
         params[:figure][:title_ids].each do |id|
