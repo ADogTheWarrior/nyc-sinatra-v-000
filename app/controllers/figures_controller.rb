@@ -60,6 +60,6 @@ class FiguresController < ApplicationController
 
   post '/figures/:id' do
 
-    redirect to 'figures/index'
+    # redirect to 'figures/index'
   end
 end
