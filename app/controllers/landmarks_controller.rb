@@ -9,8 +9,8 @@ class LandmarksController < ApplicationController
   end
 
   post '/landmarks' do
+  puts "params= #{params}"
     landmark = Landmark.create(params)
-    puts "params= #{params}"
     puts "landmark= #{landmark}"
   end
 
