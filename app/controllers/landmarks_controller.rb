@@ -27,11 +27,11 @@ class LandmarksController < ApplicationController
     landmark = Landmark.find(params[:id])
 
     if params[:name] != ""
-      figure.update(name: params[:name])
+      landmark.update(name: params[:name])
     end
 
     if params[:year_completed] != ""
-      figure.update(year_completed: params[:year_completed])
+      landmark.update(year_completed: params[:year_completed])
     end
 
     redirct_string = '/landmarks/' + @landmark.id.to_s
