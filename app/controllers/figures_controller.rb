@@ -59,6 +59,7 @@ class FiguresController < ApplicationController
   end
 
   post '/figures/:id' do
+puts "params= #{params}"
     figure = Figure.create(name: params[:figure_name])
 
     if params.key?("figure")
