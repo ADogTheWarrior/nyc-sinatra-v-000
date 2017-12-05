@@ -100,6 +100,6 @@ puts "params= #{params}"
       landmark.save
     end
 
-    redirect to 'figures/index'
+    redirect to 'figures/"#{@figure.id}"'
   end
 end
