@@ -60,7 +60,7 @@ class FiguresController < ApplicationController
 
   post '/figures/:id' do
 puts "params= #{params}"
-    figure = Figure.create(name: params[:figure_name])
+    figure = Figure.find(params[:id])
 
     if params.key?("figure")
       if params[:figure].key?("title_ids")
