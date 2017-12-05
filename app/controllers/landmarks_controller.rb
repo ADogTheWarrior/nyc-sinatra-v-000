@@ -34,7 +34,7 @@ class LandmarksController < ApplicationController
       figure.update(name: params[:year_completed])
     end
 
-    redirct_string = '/landmarks/' + landmark.id.to_s
+    redirct_string = '/landmarks/' + @landmark.id.to_s
     redirect to redirct_string
   end
 end
