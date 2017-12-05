@@ -9,9 +9,8 @@ class LandmarksController < ApplicationController
   end
 
   post '/landmarks' do
-    puts "params= #{params}"
     landmark = Landmark.create(name: params[:name], year_completed: params[:year_completed])
-    puts "landmark= #{landmark}"
+    redirect to 'landmark/index'
   end
 
   get "/landmarks/:id" do
